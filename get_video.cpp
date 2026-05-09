@@ -32,8 +32,10 @@ int main() {
     // Display the captured frame in a window named "Live".
     cv::imshow("Live", frame);
 	  cv::imshow("not gray", frameGray);
-    // Wait for 5ms for a key press. If a key is pressed, break the loop.
-    if (cv::waitKey(5) >= 0) {
+    int key = cv::waitKey(5);
+
+    if (key == 113) {
+      std::cout << "you pressed q key" << std::endl;
       break;
     }
   }
